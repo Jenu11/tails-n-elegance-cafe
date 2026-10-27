@@ -17,7 +17,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .skip-link{position:absolute;z-index:1000;left:20px;top:-60px;padding:12px 20px;background:var(--wine);color:white}.skip-link:focus{top:12px}
 .shell{width:min(1180px,calc(100% - 88px));margin-inline:auto}
 .announcement{min-height:33px;display:flex;justify-content:center;align-items:center;gap:16px;background:var(--olive-dark);color:#e9dccb;font-size:9px;letter-spacing:.23em;font-weight:700;text-align:center;padding:7px 12px}
-.announcement-deco{color:var(--peach);font-size:13px}
 .site-header{position:relative;z-index:50;background:#f8f4eb;border-bottom:1px solid rgba(59,67,50,.10)}
 .nav-inner{height:89px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:13px;min-width:0}
@@ -53,7 +52,6 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
 .btn-link{padding:0 3px;color:var(--olive-dark);text-decoration:underline;text-underline-offset:5px;text-decoration-color:#bcbdb1}
 .btn-link:hover{color:var(--wine)}
 .hero-footnote{display:flex;gap:14px;align-items:center;color:#878b7d;font-size:10px;letter-spacing:.065em;margin-top:47px}
-.footnote-stars{color:var(--wine);letter-spacing:4px;font-size:13px}
 .hero-art-wrap{position:relative;max-width:560px;width:100%;justify-self:end}
 .hero-art{position:relative;overflow:hidden;background:var(--olive);min-height:520px;aspect-ratio:1/1;border-radius:240px 240px 14px 14px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(44,52,39,.10)}
 .hero-art::before{content:'';position:absolute;inset:22px;border:1px solid rgba(246,238,224,.24);border-radius:230px 230px 5px 5px;pointer-events:none;z-index:2}
@@ -64,18 +62,14 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
 .hero-note svg{width:29px;height:29px;stroke-width:3px}
 .hero-note span{font-size:11px;line-height:1.65}.hero-note strong{font:24px/1 var(--heading)}
 .hero-orbit-copy{position:absolute;top:58px;right:-23px;font-size:9px;letter-spacing:.28em;writing-mode:vertical-rl;color:var(--olive-dark)}
+.hero-section-divider{height:1px;background:rgba(74,88,68,.35);border:0;margin:0 auto;}
 .hero-bottom{display:flex;justify-content:space-between;padding-bottom:17px;color:#878b7f;font-size:9px;letter-spacing:.19em;font-weight:700}
 .hero-scroll-note span{font-size:15px;margin-left:9px}
-.ticker{height:64px;background:var(--wine);overflow:hidden;display:flex;align-items:center;color:#f9e7d8}
-.ticker-track{width:max-content;min-width:100%;display:flex;align-items:center;justify-content:space-around;gap:40px;white-space:nowrap;padding:0 20px}
-.ticker span{font-family:var(--heading);font-size:21px;letter-spacing:.06em}
-.ticker .ticker-logo{display:block;width:42px;height:42px;object-fit:cover;border-radius:50%;flex:none}
 .section-pad{padding-top:112px;padding-bottom:112px}
 .intro{background:var(--cream)}
 .intro-grid{display:grid;grid-template-columns:31% 69%;gap:10px}
 .section-index{display:flex;flex-direction:column;gap:21px;color:var(--olive);font-size:10px;letter-spacing:.21em;font-weight:700;padding-top:13px}
 .section-index .index-line{width:70px;height:1px;background:var(--olive)}
-.section-index svg{width:30px;height:30px;color:var(--peach);margin-top:38px}
 .intro h2{font-size:clamp(50px,5.3vw,76px);line-height:1.06;letter-spacing:-.03em;color:var(--olive-ink);margin-bottom:36px}
 .intro-bottom{display:grid;grid-template-columns:1.3fr 1fr;align-items:end;gap:34px;border-top:1px solid var(--line);padding-top:27px}
 .intro-bottom p{max-width:480px;font-size:14px;line-height:1.95;color:#71766b;margin:0}
@@ -192,7 +186,7 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .hero-note{bottom:10px;left:-7px;padding:12px 15px;transform:rotate(-4deg)}.hero-note svg{width:23px;height:23px}.hero-note span{font-size:9px}.hero-note strong{font-size:20px}
   .hero-orbit-copy{right:-12px;top:30px;font-size:7px}
   .hero-bottom{padding-bottom:14px;font-size:7px}
-  .ticker{height:56px}.ticker-track{gap:19px}.ticker span{font-size:17px}.ticker .ticker-logo{width:32px;height:32px}
+  
   .section-pad{padding-top:75px;padding-bottom:77px}.intro h2,.section-heading h2,.menu-heading h2,.visit-copy h2,.faq h2{font-size:clamp(43px,10.6vw,62px)}
   .intro-bottom{padding-top:20px;gap:24px}.intro-bottom p{font-size:13px}
   .feature-grid,.menu-grid{grid-template-columns:1fr;gap:14px}.feature-card{padding:14px 14px 25px}.feature-illustration{height:185px}.feature-illustration>.feature-brand-logo{width:138px;height:138px}.feature-card h3{font-size:35px}.feature-card p{font-size:13px}
