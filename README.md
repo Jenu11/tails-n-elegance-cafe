@@ -17,3 +17,7 @@ A separate static website for the Tails ’n’ Elegance Café brand, designed f
 - To publish independently from ODDY, create a new empty public repository under `Jenu11`, then upload these files (GitHub Pages: deploy from the default branch root). The ODDY repository is untouched.
 
 The site works locally by opening `index.html`. Google Fonts are optional; the website has system-font fallbacks.
+
+## Deployment
+
+This site's homepage is `index.html` at the root of `main`. To publish it, open **Settings → Pages**, select **Deploy from a branch**, choose **main / (root)**, then save. After GitHub Pages finishes deploying, visit https://jenu11.github.io/tails-n-elegance-cafe/.
