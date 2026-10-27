@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Great+Vibes&family=Italiana&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=headline-script-20261027" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=cafe-menu-20261027" />
+  <script src="script.js?v=cafe-menu-20261027" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
@@ -85,12 +85,35 @@
       </div>
     </section>
     <section class="menu-section section-pad" id="menu" aria-labelledby="menu-title">
-      <div class="shell"><div class="menu-heading"><p class="eyebrow">GOOD THINGS IN THE MAKING</p><h2 id="menu-title">A little something <em>lovely.</em></h2><p>A taste of the categories we’re shaping for Tails ’n’ Elegance. The full menu, items, and prices can be added when confirmed.</p></div>
-      <div class="menu-grid">
-        <article class="menu-card"><div class="menu-ornament"><svg aria-hidden="true"><use href="#i-cup"/></svg></div><span class="menu-number">01 / FOR THE COFFEE LOVERS</span><h3>Coffee &<br><em>the classics</em></h3><p>Beautifully simple coffee moments, from morning rituals to afternoon pauses.</p><span class="menu-category">DRINKS</span></article>
-        <article class="menu-card"><div class="menu-ornament"><svg aria-hidden="true"><use href="#i-leaf"/></svg></div><span class="menu-number">02 / A LITTLE REFRESHMENT</span><h3>Something<br><em>different</em></h3><p>A little variety for whichever kind of refreshment the day calls for.</p><span class="menu-category">MORE SIPS</span></article>
-        <article class="menu-card"><div class="menu-ornament"><svg aria-hidden="true"><use href="#i-heart"/></svg></div><span class="menu-number">03 / THE SWEET SIDE</span><h3>Treats &<br><em>little joys</em></h3><p>Sweet and savory bites to make a good café visit even lovelier.</p><span class="menu-category">BITES</span></article>
-      </div></div>
+      <div class="shell cafe-menu-shell">
+        <div class="cafe-menu-head">
+          <div><p class="cafe-menu-kicker">TAILS ’N’ ELEGANCE CAFÉ <span aria-hidden="true">✳</span> THE MENU</p><h2 id="menu-title">Made to be <em>savoured.</em></h2><p class="cafe-menu-intro">Your favorites, captured fresh from our café. Explore something to sip, something sweet, or a delicious bite to share.</p></div>
+          <div class="cafe-menu-head-mark" aria-hidden="true"><img src="assets/tails-n-elegance-logo.webp" alt="" loading="lazy" width="120" height="120"/></div>
+        </div>
+        <div class="cafe-menu-tabs" role="tablist" aria-label="Café menu categories">
+          <button id="cafe-tab-drinks" class="cafe-menu-tab" type="button" role="tab" aria-controls="cafe-panel-drinks" aria-selected="true" tabindex="0">Coffee & Drinks <span>01</span></button>
+          <button id="cafe-tab-sweets" class="cafe-menu-tab" type="button" role="tab" aria-controls="cafe-panel-sweets" aria-selected="false" tabindex="-1">Croffles & Sweets <span>02</span></button>
+          <button id="cafe-tab-savory" class="cafe-menu-tab" type="button" role="tab" aria-controls="cafe-panel-savory" aria-selected="false" tabindex="-1">Savory Bites <span>03</span></button>
+        </div>
+        <div class="cafe-menu-panel" id="cafe-panel-drinks" role="tabpanel" aria-labelledby="cafe-tab-drinks" ><div class="cafe-product-grid"><article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/latte.webp" alt="Spanish Latte at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Spanish Latte</h3><p>A little coffee comfort, served chilled.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/matcha.webp" alt="Matcha at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Matcha</h3><p>A refreshing green favorite.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/refreshers.webp" alt="Fruit Refreshers at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Fruit Refreshers</h3><p>Bright, colorful refreshments.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/frappes.webp" alt="Signature Sweet Drinks at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Signature Sweet Drinks</h3><p>Creamy café-style specialties.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article></div></div>
+        <div class="cafe-menu-panel" id="cafe-panel-sweets" role="tabpanel" aria-labelledby="cafe-tab-sweets" hidden><div class="cafe-product-grid"><article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/croffle.webp" alt="Premium Croffles at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Premium Croffles</h3><p>Golden, crisp and dressed for a sweet moment.</p><span class="cafe-product-price">From ₱120</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/biscoff-dessert.webp" alt="Biscoff Dessert at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Biscoff Dessert</h3><p>A sweet treat with a Lotus Biscoff finish.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/lotus-dessert.webp" alt="Lotus Creations at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Lotus Creations</h3><p>A rich, indulgent café dessert.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/banana-dessert.webp" alt="Sweet Indulgences at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Sweet Indulgences</h3><p>A sweet finish to your café visit.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article></div></div>
+        <div class="cafe-menu-panel" id="cafe-panel-savory" role="tabpanel" aria-labelledby="cafe-tab-savory" hidden><div class="cafe-product-grid"><article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/beef-nachos.webp" alt="Beef Nachos at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Beef Nachos</h3><p>A generous savory bite to share.</p><span class="cafe-product-price">₱190</span></div></article>
+<article class="cafe-product"><div class="cafe-product-photo"><img src="assets/menu/pasta.webp" alt="Creamy Pasta at Tails ’n’ Elegance Café" loading="lazy" decoding="async" width="740" height="900" /></div><div class="cafe-product-details"><h3>Creamy Pasta</h3><p>A cozy comfort-food favorite.</p><span class="cafe-product-note">Ask in-store for availability and price</span></div></article></div></div>
+        <div class="cafe-menu-bottom">
+          <div><span class="cafe-menu-small-label">CROFFLE PRICE GUIDE</span><h3>More little <em>indulgences.</em></h3><p>Menu prices shown below come from the café's supplied croffle menu artwork.</p></div>
+          <div class="cafe-menu-price-columns">
+            <div><h4>Premium Croffle</h4><dl><div><dt>Biscoff Supreme</dt><dd>₱130</dd></div><div><dt>Nutella Almond</dt><dd>₱130</dd></div><div><dt>Matcha Delight</dt><dd>₱120</dd></div><div><dt>Dreamy Chocolate</dt><dd>₱120</dd></div><div><dt>S’more’s</dt><dd>₱120</dd></div><div><dt>Oreo Overload</dt><dd>₱120</dd></div></dl></div>
+            <div><h4>Classics</h4><dl><div><dt>Chocolatte Cream</dt><dd>₱100</dd></div><div><dt>Matcha Cream</dt><dd>₱100</dd></div><div><dt>Peanut Butter</dt><dd>₱100</dd></div><div><dt>Nutella</dt><dd>₱105</dd></div><div><dt>Biscoff</dt><dd>₱105</dd></div><div><dt>Plain Croffle</dt><dd>₱80</dd></div></dl></div>
+          </div>
+        </div>
+        <p class="cafe-menu-disclaimer">Photos are from Tails ’n’ Elegance Café. Availability, presentation and unlisted prices may vary; please confirm with the café before ordering.</p>
+      </div>
     </section>
     <section class="quote-band" aria-label="Our café philosophy">
       <div class="shell quote-content"><img class="quote-brand-logo" src="assets/tails-n-elegance-logo.webp" alt="" width="70" height="70" loading="lazy" decoding="async" /><p>“The best kind of company<br>comes with <em>little paws.</em>”</p><img class="quote-brand-logo" src="assets/tails-n-elegance-logo.webp" alt="" width="70" height="70" loading="lazy" decoding="async" /></div>
