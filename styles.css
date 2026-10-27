@@ -298,3 +298,18 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .quote-content p { font-size: clamp(38px, 9.2vw, 52px); line-height: 1.16; }
   .quote-content > .quote-brand-logo { width: 38px; height: 38px; }
 }
+
+
+/* Experience section: official café photography, desktop and mobile */
+#experience .feature-card-photo{padding:0;overflow:hidden;background:#3d4938;display:flex;flex-direction:column;border:1px solid rgba(255,253,248,.19);transition:transform .25s,border-color .25s,box-shadow .25s}
+#experience .feature-card-photo:hover{transform:translateY(-4px);border-color:rgba(242,188,144,.65);box-shadow:0 14px 36px rgba(13,27,16,.22)}
+#experience .feature-photo{position:relative;width:100%;height:310px;overflow:hidden;background:#53614c}
+#experience .feature-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 52%;transition:transform .35s ease}
+#experience .feature-card-photo:hover .feature-photo img{transform:scale(1.035)}
+#experience .feature-photo .feature-count{top:15px;right:15px;width:42px;height:42px;display:grid;place-items:center;background:rgba(245,241,230,.95);border-radius:50%;font:600 12px var(--body);color:var(--olive-dark);opacity:1}
+#experience .feature-card-copy{padding:25px 23px 28px;display:flex;flex-direction:column;flex:1}
+#experience .feature-card-photo h3{font:clamp(26px,2.8vw,35px)/1.12 var(--heading);color:var(--white);margin:0 0 14px;max-width:100%;overflow-wrap:break-word}
+#experience .feature-card-photo p{font-size:12px;line-height:1.85;color:#cdd5ca;margin:0;max-width:100%}
+@media(max-width:950px){#experience .feature-photo{height:250px}#experience .feature-card-copy{padding:22px 17px 25px}#experience .feature-card-photo h3{font-size:28px}}
+@media(max-width:820px){#experience .feature-photo{height:220px}#experience .feature-card-copy{padding:20px 14px 23px}#experience .feature-card-photo h3{font-size:27px}}
+@media(max-width:600px){#experience .feature-grid{grid-template-columns:1fr;gap:18px}#experience .feature-photo{height:auto;aspect-ratio:4/3}#experience .feature-card-copy{padding:24px 22px 29px}#experience .feature-card-photo h3{font-size:clamp(30px,8vw,39px)}#experience .feature-card-photo p{font-size:13px}}
