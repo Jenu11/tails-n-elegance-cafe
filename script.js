@@ -48,4 +48,36 @@
       selectCategory(tabs[target], true);
     });
   });
+  // Decorative video runs only while on screen and when visitors allow motion.
+  const visitMotionVideo = document.querySelector('.visit-motion-video');
+  if (visitMotionVideo) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const saveData = Boolean(navigator.connection && navigator.connection.saveData);
+    let videoIsVisible = false;
+    const syncVisitMotion = () => {
+      if (!videoIsVisible || document.hidden || reducedMotion.matches || saveData) {
+        visitMotionVideo.pause();
+        return;
+      }
+      const attempt = visitMotionVideo.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        videoIsVisible = entries.some(entry => entry.isIntersecting);
+        syncVisitMotion();
+      }, {rootMargin: '120px', threshold: 0.05});
+      observer.observe(visitMotionVideo);
+    } else {
+      videoIsVisible = true;
+      syncVisitMotion();
+    }
+    document.addEventListener('visibilitychange', syncVisitMotion);
+    if (typeof reducedMotion.addEventListener === 'function') {
+      reducedMotion.addEventListener('change', syncVisitMotion);
+    } else if (typeof reducedMotion.addListener === 'function') {
+      reducedMotion.addListener(syncVisitMotion);
+    }
+  }
+
 })();
