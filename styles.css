@@ -33,7 +33,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .nav-cta svg{width:15px;height:15px}
 .menu-toggle{display:none}
 .hero{position:relative;isolation:isolate;overflow:hidden;background:#ecece0}
-.hero::before{content:'';position:absolute;inset:-36px;z-index:0;pointer-events:none;background:url('assets/tec-hero-banner.webp') center / cover no-repeat;opacity:.85;filter:blur(10px) saturate(.86);transform:scale(1.025)}
+.hero::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:url('assets/tec-banner-original.jpg') center / cover no-repeat;opacity:.85}
 .hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(248,247,237,.90) 0%,rgba(248,247,237,.85) 35%,rgba(248,247,237,.62) 66%,rgba(248,247,237,.30) 100%)}
 .hero-grid{position:relative;z-index:2;min-height:647px;display:grid;grid-template-columns:51% 49%;align-items:center;gap:15px;padding-top:57px;padding-bottom:54px}
 .hero-copy{padding:0 18px 30px 0;position:relative;z-index:2}
@@ -355,8 +355,8 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .footer-brand{font-size:clamp(29px,7.7vw,38px);line-height:1.13}
 }
 
-/* Photo banner: a strongly Gaussian-blurred version of the supplied café photo.
-   Its 85%-opacity image layer sits behind a cream contrast wash and all hero UI. */
+/* Original full-resolution café photo with no blur or image softening.
+   Its 85%-opacity layer remains behind the readability overlay and hero content. */
 @media(max-width:820px){
   .hero::before{background-position:34% center}
   .hero::after{background:linear-gradient(180deg,rgba(248,247,237,.91) 0%,rgba(248,247,237,.86) 37%,rgba(248,247,237,.48) 68%,rgba(248,247,237,.36) 100%)}
