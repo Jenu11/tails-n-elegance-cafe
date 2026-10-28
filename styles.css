@@ -346,3 +346,10 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .brand-wordmark .brand-name{font-size:clamp(14px,4.15vw,16px)}
   .brand-wordmark small{font-size:7px;letter-spacing:.12em}
 }
+
+
+/* Keep the complete café name comfortable and legible in the mobile footer. */
+@media(max-width:600px){
+  .footer-top>div:first-child{grid-column:1/-1}
+  .footer-brand{font-size:clamp(29px,7.7vw,38px);line-height:1.13}
+}
