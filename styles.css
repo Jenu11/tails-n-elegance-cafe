@@ -415,3 +415,90 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
 .visit-cinematic .visit-back-link{
   text-shadow:0 0 4px rgba(255,247,226,.52),0 0 12px rgba(248,202,139,.27),0 2px 5px rgba(8,9,7,.86);
 }
+
+
+/* CAFÉ SIGNATURE DISPLAY TREATMENT
+   An original headline design system assembled from commercially usable, OFL-licensed
+   Fraunces typography. Does not use Bright DEMO or reproduce its font software.
+   Intentionally scoped away from .brand-name, .brand-wordmark, .footer-brand,
+   nav items, prices, product names, body text, and the café's logo.
+*/
+:root{--cafe-display:'Fraunces',Georgia,serif}
+
+/* Headline-only targeting: major content sections, visual cards, and the slogan banner. */
+.hero h1,
+.intro h2,
+.section-heading h2,
+#experience .feature-card-photo h3,
+.cafe-menu-head h2,
+.cafe-menu-bottom h3,
+.quote-content p,
+.visit-cinematic .visit-copy h2,
+.faq h2{
+  font-family:var(--cafe-display);
+  font-optical-sizing:auto;
+  font-variation-settings:"SOFT" 27,"WONK" 1;
+  font-feature-settings:"kern" 1,"liga" 1;
+  font-weight:500;
+  letter-spacing:-.041em;
+  text-rendering:optimizeLegibility;
+}
+
+/* Carefully tuned scales so broader letterforms still fit their original grid areas. */
+.hero h1{font-size:clamp(47px,4.3vw,63px);line-height:1.11;letter-spacing:-.054em}
+.intro h2{font-size:clamp(47px,4.8vw,69px);line-height:1.14}
+.section-heading h2{font-size:clamp(49px,4.55vw,70px);line-height:1.13}
+#experience .feature-card-photo h3{
+  font-family:var(--cafe-display);
+  font-size:clamp(26px,2.45vw,32px);
+  font-weight:500;
+  line-height:1.17;
+  letter-spacing:-.034em;
+}
+.cafe-menu-head h2{font-size:clamp(48px,5.3vw,73px);line-height:1.09}
+.cafe-menu-bottom h3{font-size:clamp(37px,3.9vw,51px);line-height:1.13}
+.quote-content p{
+  font-family:var(--cafe-display);
+  font-weight:500;
+  font-size:clamp(35px,4.1vw,58px);
+  line-height:1.18;
+  letter-spacing:-.042em;
+  padding:12px 0;
+}
+.visit-cinematic .visit-copy h2{
+  font-size:clamp(47px,4.45vw,65px);
+  line-height:1.12;
+  letter-spacing:-.044em;
+}
+.faq h2{font-size:clamp(48px,4.5vw,66px);line-height:1.14}
+
+/* Keep typography balanced through the existing tablet and mobile breakpoints. */
+@media(max-width:1150px){
+  .hero h1{font-size:clamp(46px,4.7vw,57px)}
+}
+@media(max-width:950px){
+  .hero h1{font-size:clamp(42px,4.8vw,51px)}
+  .visit-cinematic .visit-copy h2{font-size:clamp(37px,4.35vw,54px)}
+}
+@media(max-width:820px){
+  .hero h1{font-size:clamp(50px,7.2vw,65px)}
+  .intro h2{font-size:clamp(45px,6.25vw,65px)}
+  .section-heading h2{font-size:clamp(46px,6.3vw,65px)}
+  #experience .feature-card-photo h3{font-size:clamp(22px,2.9vw,29px)}
+}
+@media(max-width:600px){
+  .hero h1{font-size:clamp(39px,9.8vw,54px)!important;line-height:1.12}
+  .intro h2{font-size:clamp(39px,9.3vw,53px);line-height:1.16}
+  .section-heading h2{font-size:clamp(41px,9.6vw,56px);line-height:1.16}
+  #experience .feature-card-photo h3{font-size:clamp(29px,7.5vw,37px)}
+  .cafe-menu-head h2{font-size:clamp(39px,9.4vw,53px);line-height:1.12}
+  .cafe-menu-bottom h3{font-size:clamp(35px,8.8vw,46px)}
+  .quote-content p{font-size:clamp(35px,8.5vw,48px);line-height:1.19}
+  .visit-cinematic .visit-copy h2{font-size:clamp(40px,9.4vw,53px);line-height:1.15}
+  .faq h2{font-size:clamp(42px,9.8vw,55px)}
+}
+@media(max-width:380px){
+  .hero h1{font-size:clamp(35px,9.4vw,42px)!important}
+  .quote-content p{font-size:34px}
+  .visit-cinematic .visit-copy h2{font-size:clamp(36px,9.3vw,43px)}
+}
