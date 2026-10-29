@@ -502,3 +502,13 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .quote-content p{font-size:34px}
   .visit-cinematic .visit-copy h2{font-size:clamp(36px,9.3vw,43px)}
 }
+
+/* Custom outlined vector wordmarks, based on SIL-OFL Didot glyph outlines with
+   hand-designed flourishes; header and footer share the same artwork. */
+.brand-wordmark .brand-name{position:relative;display:block;line-height:1;min-width:0}
+.brand-name-art{display:block;width:clamp(208px,22vw,285px);max-width:100%;height:auto;object-fit:contain}
+.brand-text-accessible{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.footer-brand-art{display:block;width:min(100%,480px);height:auto;object-fit:contain}
+@media(max-width:960px) and (min-width:821px){.brand-name-art{width:208px}}
+@media(max-width:600px){.brand-name-art{width:min(220px,calc(100vw - 112px))}.footer-brand-art{width:min(100%,385px)}}
+@media(max-width:380px){.brand-name-art{width:min(205px,calc(100vw - 112px))}}
