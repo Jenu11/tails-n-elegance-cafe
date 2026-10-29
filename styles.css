@@ -512,3 +512,122 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
 @media(max-width:960px) and (min-width:821px){.brand-name-art{width:208px}}
 @media(max-width:600px){.brand-name-art{width:min(220px,calc(100vw - 112px))}.footer-brand-art{width:min(100%,385px)}}
 @media(max-width:380px){.brand-name-art{width:min(205px,calc(100vw - 112px))}}
+
+
+/* INTERACTIVE UX — clickable text surfaces are unfilled. Glowing lift on
+   pointer hover, tactile press feedback and clear keyboard focus. This
+   intentionally preserves anchor destinations, menu-tab JS, FAQ details,
+   logo artwork, layout, and all motion assets. */
+:root{
+  --ux-ease:cubic-bezier(.18,.8,.22,1.2);
+  --ux-warm-glow:rgba(234,166,111,.40);
+  --ux-olive-glow:rgba(93,101,75,.28);
+}
+:where(a:not(.skip-link),button,.faq summary){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,.visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,.footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle){
+  cursor:pointer;
+  transition:transform .24s var(--ux-ease),color .2s ease,border-color .2s ease,
+    box-shadow .24s ease,text-shadow .24s ease,filter .24s ease,background-color .2s ease;
+  transform-origin:center;
+}
+/* Eliminate opaque text-button backgrounds while retaining button proportions. */
+.nav-links .nav-cta,
+.hero-actions .btn-primary,
+.visit-cinematic .visit-actions .btn-primary{
+  background:transparent;
+  background-image:none;
+  border:1px solid currentColor;
+  box-shadow:none;
+}
+.nav-links .nav-cta,.hero-actions .btn-primary{color:var(--olive-dark)}
+.visit-cinematic .visit-actions .btn-primary{color:#f2c9a5}
+.menu-toggle,.cafe-menu-tab,.faq summary{background:transparent}
+.nav-links>a:not(.nav-cta),.btn-link,.inline-link,.visit-back-link,.faq-directions,
+.footer-nav a,.footer-location a{background:transparent}
+
+/* Each existing functional control has hover feedback without adding a text box. */
+@media(hover:hover) and (pointer:fine){
+  :is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+  .visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+  .footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle):hover{
+    transform:translateY(-2px) scale(1.035);
+    text-shadow:0 0 8px rgba(249,198,146,.55),0 0 17px rgba(234,166,111,.30);
+  }
+  .brand:hover .brand-name-art,.footer-brand:hover .footer-brand-art{
+    filter:drop-shadow(0 0 5px var(--ux-warm-glow));
+    transform:scale(1.018);
+  }
+  .nav-links>a:not(.nav-cta):hover,
+  .hero-actions .btn-link:hover,.inline-link:hover,
+  .visit-back-link:hover,.faq-directions:hover{color:var(--wine)}
+  .nav-links .nav-cta:hover,.hero-actions .btn-primary:hover{
+    background:transparent;
+    color:var(--wine);
+    border-color:var(--wine);
+    box-shadow:0 0 0 1px rgba(100,37,31,.12),0 0 18px var(--ux-warm-glow);
+  }
+  .visit-cinematic .visit-actions .btn-primary:hover{
+    background:transparent;
+    color:#fff5e7;
+    border-color:#f2c9a5;
+    box-shadow:0 0 0 1px rgba(252,216,180,.15),0 0 22px rgba(252,193,137,.52);
+  }
+  .cafe-menu-tab:hover{
+    background:transparent;
+    color:#fff6e6;
+    filter:drop-shadow(0 0 7px rgba(235,178,123,.55));
+  }
+  .faq summary:hover{background:transparent;color:var(--wine)}
+  .footer-nav a:hover,.footer-location a:hover,.visit-cinematic .visit-back-link:hover{
+    filter:drop-shadow(0 0 6px rgba(248,193,142,.52));
+  }
+  .menu-toggle:hover{
+    background:transparent;
+    border-color:var(--wine);
+    box-shadow:0 0 15px var(--ux-warm-glow);
+  }
+}
+/* On touch and mouse down: small depress-and-return action instead of a fake link. */
+:is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+.visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+.footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle):active{
+  transform:translateY(1px) scale(.965);
+  transition-duration:.09s;
+}
+/* Menu's selected tab remains visually distinct after a genuine click. */
+.cafe-menu-tab[aria-selected="true"]{
+  background:transparent;
+  border-bottom-color:#e7b58b;
+  color:#f6ca99;
+  text-shadow:0 0 11px rgba(238,181,125,.30);
+}
+/* Strong and consistent focus state for keyboard navigation. */
+:is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+.visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+.footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle):focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:4px;
+  box-shadow:0 0 0 3px rgba(241,189,139,.20),0 0 19px rgba(241,189,139,.38);
+  text-shadow:0 0 9px rgba(249,206,164,.38);
+}
+.brand-name-art,.footer-brand-art{
+  transition:transform .24s var(--ux-ease),filter .24s ease;
+}
+/* Respect motion preferences; preserve focus indicators and selected tabs. */
+@media(prefers-reduced-motion:reduce){
+  :is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+  .visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+  .footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle,
+  .brand-name-art,.footer-brand-art){
+    transition:none!important;
+    animation:none!important;
+  }
+  :is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+  .visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+  .footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle):hover,
+  :is(.brand,.footer-brand,.nav-links a,.hero-actions .btn,.inline-link,
+  .visit-actions .btn,.visit-back-link,.faq-directions,.footer-nav a,
+  .footer-location a,.cafe-menu-tab,.faq summary,.menu-toggle):active{
+    transform:none;
+  }
+}
