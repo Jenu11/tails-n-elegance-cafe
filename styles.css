@@ -766,3 +766,59 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   .hero-orbit-copy{right:-8px}
   .footer-bottom{font-size:15px}
 }
+
+
+/* MENU TABS — clipping fix for Coffee & Drinks 01 and its sibling tabs.
+   The tablist is horizontally scrollable. Scaling tabs on hover/press made
+   the text and glow extend beyond its clipping viewport; the original
+   keyboard and click behavior remains fully intact. */
+.cafe-menu-tabs{
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:7px 12px 6px;
+  scroll-padding-inline:12px;
+  -webkit-overflow-scrolling:touch;
+}
+.cafe-menu-tabs .cafe-menu-tab{
+  flex:0 0 auto;
+  min-width:max-content;
+  line-height:1.45;
+  position:relative;
+  transform:none;
+  transform-origin:center;
+  filter:none;
+}
+.cafe-menu-tabs .cafe-menu-tab:first-child{padding-left:12px}
+/* Let light and underline communicate interaction without moving or cropping text. */
+@media(hover:hover) and (pointer:fine){
+  .menu-section .cafe-menu-tabs .cafe-menu-tab:hover{
+    transform:none;
+    filter:none;
+    color:#fff6e9;
+    text-shadow:0 0 6px rgba(251,211,168,.65),0 0 16px rgba(237,181,128,.43);
+    box-shadow:inset 0 -2px 0 rgba(233,181,139,.38);
+  }
+}
+.menu-section .cafe-menu-tabs .cafe-menu-tab:active{
+  transform:none;
+  filter:none;
+  text-shadow:0 0 8px rgba(251,211,168,.67);
+  box-shadow:inset 0 -3px 0 rgba(246,202,153,.56);
+}
+/* Keep the selected tab clear and accessible after changing categories. */
+.menu-section .cafe-menu-tabs .cafe-menu-tab[aria-selected="true"]{
+  border-bottom-color:#e7b58b;
+  color:#f6ca99;
+}
+.menu-section .cafe-menu-tabs .cafe-menu-tab:focus-visible{
+  transform:none;
+  outline:2px solid #f6ca99;
+  outline-offset:2px;
+  box-shadow:0 0 12px rgba(241,189,139,.35);
+}
+/* Maintain the previously approved minimum font size at every viewport. */
+.cafe-menu-tabs .cafe-menu-tab,
+.cafe-menu-tabs .cafe-menu-tab span{font-size:15px}
+@media(prefers-reduced-motion:reduce){
+  .menu-section .cafe-menu-tabs .cafe-menu-tab:is(:hover,:active,:focus-visible){transform:none;transition:none}
+}
