@@ -884,3 +884,15 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
   /* Source artwork is white; tint its pixels dark olive for the light hero. */
   filter:brightness(0) saturate(100%) invert(17%) sepia(16%) saturate(561%) hue-rotate(69deg) brightness(93%) contrast(91%);
 }
+
+/* Match the approved hero SVG artwork in the navigation wordmark.
+   Keep the original image dimensions, layout and existing hover lift/glow. */
+.brand-name-art{filter:brightness(0) saturate(100%) invert(17%) sepia(16%) saturate(561%) hue-rotate(69deg) brightness(93%) contrast(91%)}
+@media(hover:hover) and (pointer:fine){
+  .brand:hover .brand-name-art{
+    filter:brightness(0) saturate(100%) invert(17%) sepia(16%) saturate(561%) hue-rotate(69deg) brightness(93%) contrast(91%) drop-shadow(0 0 5px var(--ux-warm-glow));
+  }
+}
+/* The supplied SVG is white, so the footer uses its original appearance
+   against the existing dark footer background. */
+.footer-brand-art{filter:none}
