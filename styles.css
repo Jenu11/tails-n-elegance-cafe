@@ -865,3 +865,22 @@ h1 em,h2 em{font-style:normal;color:var(--wine)}
     will-change:auto;
   }
 }
+
+
+/* Approved hero headline artwork: use the supplied vector without changing
+   the navigation wordmark, logo, hero grid, or surrounding interactions. */
+#hero-title.hero-svg-heading{
+  font-size:0!important;
+  line-height:0!important;
+  letter-spacing:0;
+  max-width:600px;
+  padding:0;
+  margin:0 0 27px;
+}
+#hero-title .hero-svg-heading-art{
+  display:block;
+  width:100%;
+  height:auto;
+  /* Source artwork is white; tint its pixels dark olive for the light hero. */
+  filter:brightness(0) saturate(100%) invert(17%) sepia(16%) saturate(561%) hue-rotate(69deg) brightness(93%) contrast(91%);
+}
